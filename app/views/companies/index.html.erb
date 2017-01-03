@@ -1,0 +1,22 @@
+<% @companies.each do |company|  %>
+  <div class="company card">
+    <div class='company-upvote'>
+      <div class="company-arrow"></div>
+      <div class='company-count'>95</div>
+    </div>
+    <%= image_tag "http://placehold.it/45x30", class: "company-image hidden-xs"%>
+    <div class='company-body'>
+      <h3><%= company.name %></h3>
+      <p>Registration number : <%= company.registration_number %></p>
+      <p>VAT number : <%= company.VAT_number %></p>
+      <p><i class="fa fa-phone-square" aria-hidden="true"></i> : <%= company.telephone %></p>
+      <p><i class="fa fa-globe" aria-hidden="true"></i> : <%= company.website %></p>
+    </div>
+    <ul class="list-inline company-controls company-controls-hidden hidden-sm hidden-xs">
+      <li><a href=""><i class="fa fa-heart"></i></a></li>
+      <li><a href=""><i class="fa fa-share"></i></a></li>
+      <li><a href=""><i class="fa fa-star"></i></a></li>
+    </ul>
+    <%= link_to "", company_path(company), class: "card-link" %>
+  </div>
+<% end %>

@@ -37,17 +37,17 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="192" y="21" name="companies">
+</datatypes><table x="12" y="347" name="companies">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="name" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
-<row name="registration number" null="1" autoincrement="0">
+<row name="registration_number" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
-<row name="VAT number" null="1" autoincrement="0">
+<row name="VAT_number" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="website" null="1" autoincrement="0">
@@ -60,17 +60,17 @@
 <part>id</part>
 </key>
 </table>
-<table x="381" y="21" name="users">
+<table x="561" y="343" name="users">
 <row name="id" null="1" autoincrement="1">
-<datatype>TINYINT</datatype>
-<default>NULL</default></row>
-<row name="email" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="first_name" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="last_name" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="telephone" null="1" autoincrement="0">
@@ -84,7 +84,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="10" y="21" name="addresses">
+<table x="191" y="34" name="addresses">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -117,7 +117,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="522" y="21" name="products">
+<table x="502" y="170" name="products">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -138,7 +138,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="711" y="160" name="components">
+<table x="791" y="173" name="components">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -159,7 +159,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="753" y="374" name="order_items">
+<table x="963" y="447" name="order_items">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -186,11 +186,15 @@
 <datatype>TINYINT</datatype>
 <default>NULL</default><relation table="purchase_orders" row="id" />
 </row>
+<row name="stock_id" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default><relation table="stocks" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="562" y="352" name="quotes">
+<table x="454" y="694" name="quotes">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -223,7 +227,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="166" y="236" name="invoices">
+<table x="35" y="632" name="invoices">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -314,7 +318,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="916" y="164" name="subcomponents">
+<table x="1010" y="172" name="subcomponents">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -351,7 +355,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="559" y="625" name="purchase_orders">
+<table x="936" y="747" name="purchase_orders">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -362,6 +366,41 @@
 <row name="user_id" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="amount" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="704" y="861" name="stocks">
+<row name="id" null="1" autoincrement="1">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="228" y="460" name="contacts">
+<row name="id" null="1" autoincrement="1">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="first_name" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="last_name" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="telephone" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="company_id" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default><relation table="companies" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
